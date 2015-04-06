@@ -112,7 +112,6 @@
     <InterfaceDefinition Include="MainStoryboard.storyboard" />
     <InterfaceDefinition Include="Cart2ViewController.xib" />
     <InterfaceDefinition Include="Cells\CartItemCell.xib" />
-    <InterfaceDefinition Include="Cells\ShopItemCell.xib" />
     <InterfaceDefinition Include="Cells\ShopItemCell2.xib" />
   </ItemGroup>
   <ItemGroup>
@@ -137,7 +136,6 @@
     <Compile Include="Services\dataservice.cs" />
     <Compile Include="Services\IDataService.cs" />
     <Compile Include="Helpers\ImageHelpers.cs" />
-    <Compile Include="CartViewController.cs" />
     <Compile Include="Cart2ViewController.cs" />
     <Compile Include="Cart2ViewController.designer.cs">
       <DependentUpon>Cart2ViewController.cs</DependentUpon>
@@ -149,10 +147,6 @@
     </Compile>
     <Compile Include="Singletons\CurrentShoppingCart.cs" />
     <Compile Include="Singletons\CurrentShopItem.cs" />
-    <Compile Include="Cells\ShopItemCell.cs" />
-    <Compile Include="Cells\ShopItemCell.designer.cs">
-      <DependentUpon>ShopItemCell.cs</DependentUpon>
-    </Compile>
     <Compile Include="Cells\ShopItemCell2.cs" />
     <Compile Include="Cells\ShopItemCell2.designer.cs">
       <DependentUpon>ShopItemCell2.cs</DependentUpon>

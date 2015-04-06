@@ -57,6 +57,8 @@ namespace rakutenshoppingcart
 				mShopItems = mDataService.GetShopItems();
 				mCartItems = mDataService.GetCartItems();
 				CurrentShoppingCart.Instance.CartItems = mCartItems;
+				//reg the custom cell 
+				controller.TableView.RegisterNibForCellReuse(UINib.FromName(ShopItemCell2.Key, NSBundle.MainBundle), ShopItemCell2.Key);
 			}
 
 			public IList<Models.Catalog.ShopItem> ShopItems {
@@ -77,8 +79,11 @@ namespace rakutenshoppingcart
 			// Customize the appearance of table view cells.
 			public override UITableViewCell GetCell (UITableView tableView, NSIndexPath indexPath)
 			{
-				//var cell = (ShopItemCell)tableView.DequeueReusableCell (CellIdentifier, indexPath);
-				var cell = ShopItemCell2.Create ();
+//				var cell = (ShopItemCell2)tableView.DequeueReusableCell (ShopItemCell2.Key);
+//
+//				if (cell == null)
+				var	cell = ShopItemCell2.Create ();
+
 //				cell.Text = mShopItems [indexPath.Row].brand;
 //				cell.DetailTextLabel.Text = mShopItems [indexPath.Row].name;
 //				cell.ImageView.Image = ImageHelpers.FromUrl(mShopItems[indexPath.Row].images[0].location);
