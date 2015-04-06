@@ -1,0 +1,28 @@
+﻿<Properties StartupItem="rakutenshoppingcart/rakutenshoppingcart.csproj">
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug|iPhoneSimulator" PreferredExecutionTarget="MonoDevelop.IPhone.IPhoneSimulatorTarget.IPhone6Plus.8.2" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="rakutenshoppingcart/CartViewController.designer.cs">
+    <Files>
+      <File FileName="rakutenshoppingcart/AppDelegate.cs" Line="1" Column="1" />
+      <File FileName="rakutenshoppingcart/MasterViewController.cs" Line="1" Column="1" />
+      <File FileName="rakutenshoppingcart/DetailViewController.cs" Line="62" Column="62" />
+      <File FileName="rakutenshoppingcart/Models/catalog.cs" Line="1" Column="1" />
+      <File FileName="rakutenshoppingcart/Models/item.cs" Line="1" Column="1" />
+      <File FileName="rakutenshoppingcart/Models/config.cs" Line="1" Column="1" />
+      <File FileName="rakutenshoppingcart/Services/dataservice.cs" Line="1" Column="1" />
+      <File FileName="rakutenshoppingcart/Services/data/cat_data.json" Line="1" Column="1" />
+      <File FileName="rakutenshoppingcart/Services/IDataService.cs" Line="1" Column="1" />
+      <File FileName="rakutenshoppingcart/Helpers/ImageHelpers.cs" Line="1" Column="1" />
+      <File FileName="rakutenshoppingcart/Main.cs" Line="1" Column="1" />
+      <File FileName="rakutenshoppingcart/CartViewController.cs" Line="90" Column="90" />
+      <File FileName="rakutenshoppingcart/CartViewController.designer.cs" Line="2" Column="2" />
+      <File FileName="rakutenshoppingcart/DetailViewController.designer.cs" Line="1" Column="1" />
+      <File FileName="rakutenshoppingcart/MasterViewController.designer.cs" Line="1" Column="1" />
+    </Files>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches>
+    <Watch file="../joinin2apps/trunk/Joinin2.Touch/Helpers/ImageHelpers.cs" line="129" offsetX="365" offsetY="1920" expression="container" liveUpdate="False" />
+  </MonoDevelop.Ide.DebuggingService.PinnedWatches>
+</Properties>

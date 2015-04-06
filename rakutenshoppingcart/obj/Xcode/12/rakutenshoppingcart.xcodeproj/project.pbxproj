@@ -1,0 +1,306 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		1A16D7F40000000000000000 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 84198DE00000000000000000 /* UIKit.framework */; };
+		1685CB560000000000000000 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BD2A57C00000000000000000 /* MapKit.framework */; };
+		12F4BEB80000000000000000 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F63B21A00000000000000000 /* Foundation.framework */; };
+		2F7503630000000000000000 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 330610010000000000000000 /* CoreGraphics.framework */; };
+		2ADF70250000000000000000 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2E707CC30000000000000000 /* Images.xcassets */; };
+		12D8BD000000000000000000 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3A3E55B00000000000000000 /* LaunchScreen.xib */; };
+		2E3D99A70000000000000000 /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 31CEA6450000000000000000 /* MainStoryboard.storyboard */; };
+		1C685A910000000000000000 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 1FF9672F0000000000000000 /* Info.plist */; };
+		38BDDC650000000000000000 /* Entitlements.plist in Resources */ = {isa = PBXBuildFile; fileRef = 3C4EE9030000000000000000 /* Entitlements.plist */; };
+		3FAD12850000000000000000 /* Cart2ViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 33E1F2300000000000000000 /* Cart2ViewController.xib */; };
+		30D036B90000000000000000 /* CartItemCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 346143570000000000000000 /* CartItemCell.xib */; };
+		30378D650000000000000000 /* ShopItemCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 33C89A030000000000000000 /* ShopItemCell.xib */; };
+		3E48DCC10000000000000000 /* ShopItemCell2.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1D9E95F00000000000000000 /* ShopItemCell2.xib */; };
+		31B3BF0A0000000000000000 /* AppDelegate.h in Sources */ = {isa = PBXBuildFile; fileRef = 3544CBA80000000000000000 /* AppDelegate.h */; };
+		8963C6300000000000000000 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = C27490100000000000000000 /* AppDelegate.m */; };
+		215AB1990000000000000000 /* MasterViewController.h in Sources */ = {isa = PBXBuildFile; fileRef = 24EBBE370000000000000000 /* MasterViewController.h */; };
+		1674A8A30000000000000000 /* MasterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A05B5410000000000000000 /* MasterViewController.m */; };
+		1641C5870000000000000000 /* DetailViewController.h in Sources */ = {isa = PBXBuildFile; fileRef = 19D2D2250000000000000000 /* DetailViewController.h */; };
+		20C208450000000000000000 /* DetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 245314E30000000000000000 /* DetailViewController.m */; };
+		22711D060000000000000000 /* CartViewController.h in Sources */ = {isa = PBXBuildFile; fileRef = 260229A40000000000000000 /* CartViewController.h */; };
+		196D0BED0000000000000000 /* CartViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1CFE188B0000000000000000 /* CartViewController.m */; };
+		1B1C20AE0000000000000000 /* Cart2ViewController.h in Sources */ = {isa = PBXBuildFile; fileRef = 1EAD2D4C0000000000000000 /* Cart2ViewController.h */; };
+		42D07F000000000000000000 /* Cart2ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D3DD1D00000000000000000 /* Cart2ViewController.m */; };
+		190745B50000000000000000 /* CartItemCell.h in Sources */ = {isa = PBXBuildFile; fileRef = 1C9852530000000000000000 /* CartItemCell.h */; };
+		31CBBAEB0000000000000000 /* CartItemCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 355CC7890000000000000000 /* CartItemCell.m */; };
+		154355FB0000000000000000 /* ShopItemCell.h in Sources */ = {isa = PBXBuildFile; fileRef = 18D462990000000000000000 /* ShopItemCell.h */; };
+		2A76BE930000000000000000 /* ShopItemCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2E07CB310000000000000000 /* ShopItemCell.m */; };
+		DEE59A300000000000000000 /* ShopItemCell2.h in Sources */ = {isa = PBXBuildFile; fileRef = 117F66410000000000000000 /* ShopItemCell2.h */; };
+		26B2CED90000000000000000 /* ShopItemCell2.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A43DB770000000000000000 /* ShopItemCell2.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		4B08C4000000000000000000 /* rakutenshoppingcart.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; name = "rakutenshoppingcart.app"; path = "rakutenshoppingcart.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		84198DE00000000000000000 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = "UIKit.framework"; path = "System/Library/Frameworks/UIKit.framework"; sourceTree = SDKROOT; };
+		BD2A57C00000000000000000 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = "MapKit.framework"; path = "System/Library/Frameworks/MapKit.framework"; sourceTree = SDKROOT; };
+		F63B21A00000000000000000 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = "Foundation.framework"; path = "System/Library/Frameworks/Foundation.framework"; sourceTree = SDKROOT; };
+		330610010000000000000000 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = "CoreGraphics.framework"; path = "System/Library/Frameworks/CoreGraphics.framework"; sourceTree = SDKROOT; };
+		2E707CC30000000000000000 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = "Images.xcassets"; path = "Images.xcassets"; sourceTree = "<group>"; };
+		3A3E55B00000000000000000 /* LaunchScreen.xib */ = {isa = PBXFileReference; name = "LaunchScreen.xib"; path = "LaunchScreen.xib"; sourceTree = "<group>"; };
+		31CEA6450000000000000000 /* MainStoryboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = "MainStoryboard.storyboard"; path = "MainStoryboard.storyboard"; sourceTree = "<group>"; };
+		1FF9672F0000000000000000 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "Info.plist"; path = "Info.plist"; sourceTree = "<group>"; };
+		3C4EE9030000000000000000 /* Entitlements.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "Entitlements.plist"; path = "Entitlements.plist"; sourceTree = "<group>"; };
+		33E1F2300000000000000000 /* Cart2ViewController.xib */ = {isa = PBXFileReference; name = "Cart2ViewController.xib"; path = "Cart2ViewController.xib"; sourceTree = "<group>"; };
+		346143570000000000000000 /* CartItemCell.xib */ = {isa = PBXFileReference; name = "CartItemCell.xib"; path = "Cells/CartItemCell.xib"; sourceTree = "<group>"; };
+		33C89A030000000000000000 /* ShopItemCell.xib */ = {isa = PBXFileReference; name = "ShopItemCell.xib"; path = "Cells/ShopItemCell.xib"; sourceTree = "<group>"; };
+		1D9E95F00000000000000000 /* ShopItemCell2.xib */ = {isa = PBXFileReference; name = "ShopItemCell2.xib"; path = "Cells/ShopItemCell2.xib"; sourceTree = "<group>"; };
+		3544CBA80000000000000000 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "AppDelegate.h"; path = "AppDelegate.h"; sourceTree = "<group>"; };
+		C27490100000000000000000 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = "AppDelegate.m"; path = "AppDelegate.m"; sourceTree = "<group>"; };
+		24EBBE370000000000000000 /* MasterViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "MasterViewController.h"; path = "MasterViewController.h"; sourceTree = "<group>"; };
+		1A05B5410000000000000000 /* MasterViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = "MasterViewController.m"; path = "MasterViewController.m"; sourceTree = "<group>"; };
+		19D2D2250000000000000000 /* DetailViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "DetailViewController.h"; path = "DetailViewController.h"; sourceTree = "<group>"; };
+		245314E30000000000000000 /* DetailViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = "DetailViewController.m"; path = "DetailViewController.m"; sourceTree = "<group>"; };
+		260229A40000000000000000 /* CartViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "CartViewController.h"; path = "CartViewController.h"; sourceTree = "<group>"; };
+		1CFE188B0000000000000000 /* CartViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = "CartViewController.m"; path = "CartViewController.m"; sourceTree = "<group>"; };
+		1EAD2D4C0000000000000000 /* Cart2ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "Cart2ViewController.h"; path = "Cart2ViewController.h"; sourceTree = "<group>"; };
+		3D3DD1D00000000000000000 /* Cart2ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = "Cart2ViewController.m"; path = "Cart2ViewController.m"; sourceTree = "<group>"; };
+		1C9852530000000000000000 /* CartItemCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "CartItemCell.h"; path = "CartItemCell.h"; sourceTree = "<group>"; };
+		355CC7890000000000000000 /* CartItemCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = "CartItemCell.m"; path = "CartItemCell.m"; sourceTree = "<group>"; };
+		18D462990000000000000000 /* ShopItemCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "ShopItemCell.h"; path = "ShopItemCell.h"; sourceTree = "<group>"; };
+		2E07CB310000000000000000 /* ShopItemCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = "ShopItemCell.m"; path = "ShopItemCell.m"; sourceTree = "<group>"; };
+		117F66410000000000000000 /* ShopItemCell2.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "ShopItemCell2.h"; path = "ShopItemCell2.h"; sourceTree = "<group>"; };
+		2A43DB770000000000000000 /* ShopItemCell2.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = "ShopItemCell2.m"; path = "ShopItemCell2.m"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		1813C8AA0000000000000000 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1A16D7F40000000000000000 /* UIKit.framework in Frameworks */,
+				1685CB560000000000000000 /* MapKit.framework in Frameworks */,
+				12F4BEB80000000000000000 /* Foundation.framework in Frameworks */,
+				2F7503630000000000000000 /* CoreGraphics.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		2702888B0000000000000000 = {
+			isa = PBXGroup;
+			children = (
+				C5C1B7800000000000000000 /* rakutenshoppingcart */,
+				2E0601200000000000000000 /* Frameworks */,
+				31B5AE650000000000000000 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		31B5AE650000000000000000 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				4B08C4000000000000000000 /* rakutenshoppingcart.app */,
+			);
+			name = "Products";
+			sourceTree = "<group>";
+		};
+		2E0601200000000000000000 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				84198DE00000000000000000 /* UIKit.framework */,
+				BD2A57C00000000000000000 /* MapKit.framework */,
+				F63B21A00000000000000000 /* Foundation.framework */,
+				330610010000000000000000 /* CoreGraphics.framework */,
+			);
+			name = "Frameworks";
+			sourceTree = "<group>";
+		};
+		C5C1B7800000000000000000 /* rakutenshoppingcart */ = {
+			isa = PBXGroup;
+			children = (
+				3544CBA80000000000000000 /* AppDelegate.h */,
+				1EAD2D4C0000000000000000 /* Cart2ViewController.h */,
+				33E1F2300000000000000000 /* Cart2ViewController.xib */,
+				1C9852530000000000000000 /* CartItemCell.h */,
+				260229A40000000000000000 /* CartViewController.h */,
+				19D2D2250000000000000000 /* DetailViewController.h */,
+				3C4EE9030000000000000000 /* Entitlements.plist */,
+				2E707CC30000000000000000 /* Images.xcassets */,
+				1FF9672F0000000000000000 /* Info.plist */,
+				3A3E55B00000000000000000 /* LaunchScreen.xib */,
+				31CEA6450000000000000000 /* MainStoryboard.storyboard */,
+				24EBBE370000000000000000 /* MasterViewController.h */,
+				18D462990000000000000000 /* ShopItemCell.h */,
+				117F66410000000000000000 /* ShopItemCell2.h */,
+				147AB4E50000000000000000 /* Cells */,
+				119A4D7C0000000000000000 /* Supporting Files */,
+			);
+			name = "rakutenshoppingcart";
+			sourceTree = "<group>";
+		};
+		147AB4E50000000000000000 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				346143570000000000000000 /* CartItemCell.xib */,
+				33C89A030000000000000000 /* ShopItemCell.xib */,
+				1D9E95F00000000000000000 /* ShopItemCell2.xib */,
+			);
+			name = "Cells";
+			sourceTree = "<group>";
+		};
+		119A4D7C0000000000000000 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				C27490100000000000000000 /* AppDelegate.m */,
+				3D3DD1D00000000000000000 /* Cart2ViewController.m */,
+				355CC7890000000000000000 /* CartItemCell.m */,
+				1CFE188B0000000000000000 /* CartViewController.m */,
+				245314E30000000000000000 /* DetailViewController.m */,
+				1A05B5410000000000000000 /* MasterViewController.m */,
+				2E07CB310000000000000000 /* ShopItemCell.m */,
+				2A43DB770000000000000000 /* ShopItemCell2.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		23DD59F10000000000000000 /* rakutenshoppingcart */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 1DBD8BA00000000000000000 /* Build configuration list for PBXNativeTarget "rakutenshoppingcart" */;
+			buildPhases = (
+				11F7FA200000000000000000 /* Sources */,
+				1813C8AA0000000000000000 /* Frameworks */,
+				3D8E73040000000000000000 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "rakutenshoppingcart";
+			productName = "rakutenshoppingcart";
+			productReference = 4B08C4000000000000000000 /* rakutenshoppingcart.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		165F43930000000000000000 /* Project object */ = {
+			isa = PBXProject;
+			buildConfigurationList = 21C2672C0000000000000000 /* Build configuration list for PBXProject "rakutenshoppingcart" */;
+			compatibilityVersion = "Xcode 3.2";
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 2702888B0000000000000000;
+			productRefGroup = 31B5AE650000000000000000 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				23DD59F10000000000000000 /* rakutenshoppingcart */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		3D8E73040000000000000000 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2ADF70250000000000000000 /* Images.xcassets in Resources */,
+				12D8BD000000000000000000 /* LaunchScreen.xib in Resources */,
+				2E3D99A70000000000000000 /* MainStoryboard.storyboard in Resources */,
+				1C685A910000000000000000 /* Info.plist in Resources */,
+				38BDDC650000000000000000 /* Entitlements.plist in Resources */,
+				3FAD12850000000000000000 /* Cart2ViewController.xib in Resources */,
+				30D036B90000000000000000 /* CartItemCell.xib in Resources */,
+				30378D650000000000000000 /* ShopItemCell.xib in Resources */,
+				3E48DCC10000000000000000 /* ShopItemCell2.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		11F7FA200000000000000000 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				31B3BF0A0000000000000000 /* AppDelegate.h in Sources */,
+				8963C6300000000000000000 /* AppDelegate.m in Sources */,
+				215AB1990000000000000000 /* MasterViewController.h in Sources */,
+				1674A8A30000000000000000 /* MasterViewController.m in Sources */,
+				1641C5870000000000000000 /* DetailViewController.h in Sources */,
+				20C208450000000000000000 /* DetailViewController.m in Sources */,
+				22711D060000000000000000 /* CartViewController.h in Sources */,
+				196D0BED0000000000000000 /* CartViewController.m in Sources */,
+				1B1C20AE0000000000000000 /* Cart2ViewController.h in Sources */,
+				42D07F000000000000000000 /* Cart2ViewController.m in Sources */,
+				190745B50000000000000000 /* CartItemCell.h in Sources */,
+				31CBBAEB0000000000000000 /* CartItemCell.m in Sources */,
+				154355FB0000000000000000 /* ShopItemCell.h in Sources */,
+				2A76BE930000000000000000 /* ShopItemCell.m in Sources */,
+				DEE59A300000000000000000 /* ShopItemCell2.h in Sources */,
+				26B2CED90000000000000000 /* ShopItemCell2.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		39FD66660000000000000000 /* MonoTouch */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				OTHER_CFLAGS = "";
+				OTHER_LDFLAGS = "";
+				SDKROOT = iphoneos;
+			};
+			name = MonoTouch;
+		};
+		429AE9B00000000000000000 /* MonoTouch */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = NO;
+				PRODUCT_NAME = "rakutenshoppingcart";
+				WRAPPER_EXTENSION = app;
+			};
+			name = MonoTouch;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		21C2672C0000000000000000 /* Build configuration list for PBXProject "rakutenshoppingcart" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				39FD66660000000000000000 /* MonoTouch */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = MonoTouch;
+		};
+		1DBD8BA00000000000000000 /* Build configuration list for PBXNativeTarget "rakutenshoppingcart" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				429AE9B00000000000000000 /* MonoTouch */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = MonoTouch;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 165F43930000000000000000 /* Project object */;
+}
