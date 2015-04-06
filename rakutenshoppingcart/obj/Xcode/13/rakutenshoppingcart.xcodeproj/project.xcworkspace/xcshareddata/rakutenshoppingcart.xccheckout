@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>A0BC3599-BDCF-4A9A-9C73-027AC269049E</string>
+	<key>IDESourceControlProjectName</key>
+	<string>rakutenshoppingcart</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>63737D7887FA0B79D92CC5E2BB6E3D9164F5C625</key>
+		<string>https://github.com/guidedog51/rakutenshoppingcart.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>rakutenshoppingcart/obj/Xcode/13/rakutenshoppingcart.xcodeproj</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>63737D7887FA0B79D92CC5E2BB6E3D9164F5C625</key>
+		<string>../../../../../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>https://github.com/guidedog51/rakutenshoppingcart.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>111</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>63737D7887FA0B79D92CC5E2BB6E3D9164F5C625</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>63737D7887FA0B79D92CC5E2BB6E3D9164F5C625</string>
+			<key>IDESourceControlWCCName</key>
+			<string>rakutenshoppingcart2</string>
+		</dict>
+	</array>
+</dict>
+</plist>

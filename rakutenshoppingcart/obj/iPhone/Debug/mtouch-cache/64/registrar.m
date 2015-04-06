@@ -413,32 +413,7 @@ void native_to_managed_trampoline_11 (id self, SEL _cmd, MonoMethod **managed_me
 }
 
 
-void native_to_managed_trampoline_12 (id self, SEL _cmd, MonoMethod **managed_method_ptr, NSString * p0, const char *r0, const char *r1, const char *r2)
-{
-	MonoMethod *managed_method = *managed_method_ptr;
-	void *arg_ptrs [1];
-	MonoObject *mthis;
-	if (mono_domain_get () == NULL)
-		mono_jit_thread_attach (NULL);
-	mthis = NULL;
-	if (self) {
-		mthis = xamarin_get_managed_object_for_ptr_fast (self, false);
-	}
-	if (!managed_method) {
-		const char *paramptr[1] = { r0 };
-		managed_method = xamarin_get_reflection_method_method (xamarin_get_method_direct(r1, r2, 1, paramptr));
-		*managed_method_ptr = managed_method;
-	}
-	xamarin_check_for_gced_object (mthis, _cmd, self, managed_method);
-	arg_ptrs [0] = p0 ? mono_string_new (mono_domain_get (), [p0 UTF8String]) : NULL;
-
-	mono_runtime_invoke (managed_method, mthis, arg_ptrs, NULL);
-
-	return;
-}
-
-
-void native_to_managed_trampoline_13 (id self, SEL _cmd, MonoMethod **managed_method_ptr, id p0, const char *r0, const char *r1, const char *r2)
+void native_to_managed_trampoline_12 (id self, SEL _cmd, MonoMethod **managed_method_ptr, id p0, const char *r0, const char *r1, const char *r2)
 {
 	MonoMethod *managed_method = *managed_method_ptr;
 	void *arg_ptrs [1];
@@ -599,6 +574,196 @@ void native_to_managed_trampoline_13 (id self, SEL _cmd, MonoMethod **managed_me
 	}
 @end
 
+@interface ShopItemCell : UITableViewCell {
+	void *__monoObjectGCHandle;
+}
+	@property (nonatomic, assign) id itemBrand;
+	@property (nonatomic, assign) id itemName;
+	@property (nonatomic, assign) id itemTagline;
+	@property (nonatomic, assign) id itemThumbnail;
+	-(void) release;
+	-(id) retain;
+	-(void) dealloc;
+	-(id) itemBrand;
+	-(void) setItemBrand:(id)p0;
+	-(id) itemName;
+	-(void) setItemName:(id)p0;
+	-(id) itemTagline;
+	-(void) setItemTagline:(id)p0;
+	-(id) itemThumbnail;
+	-(void) setItemThumbnail:(id)p0;
+	-(bool) conformsToProtocol:(void *)p0;
+@end
+@implementation ShopItemCell { } 
+	-(void) release
+	{
+		xamarin_release_trampoline (self, _cmd);
+	}
+
+	-(id) retain
+	{
+		return xamarin_retain_trampoline (self, _cmd);
+	}
+
+	-(void) dealloc
+	{
+		int gchandle = xamarin_get_gchandle (self);
+		xamarin_unregister_nsobject (self, mono_gchandle_get_target (gchandle));
+		xamarin_free_gchandle (self, gchandle);
+		mono_thread_detach_if_exiting ();
+		[super dealloc];
+	}
+
+	-(id) itemBrand
+	{
+		static MonoMethod *managed_method = NULL;
+		return native_to_managed_trampoline_1 (self, _cmd, &managed_method, "rakutenshoppingcart.ShopItemCell, rakutenshoppingcart, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null", "get_itemBrand");
+	}
+
+	-(void) setItemBrand:(id)p0
+	{
+		static MonoMethod *managed_method = NULL;
+		native_to_managed_trampoline_2 (self, _cmd, &managed_method, p0, "UIKit.UILabel, Xamarin.iOS, Version=0.0.0.0, Culture=neutral, PublicKeyToken=84e04ff9cfb79065", "rakutenshoppingcart.ShopItemCell, rakutenshoppingcart, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null", "set_itemBrand");
+	}
+
+	-(id) itemName
+	{
+		static MonoMethod *managed_method = NULL;
+		return native_to_managed_trampoline_1 (self, _cmd, &managed_method, "rakutenshoppingcart.ShopItemCell, rakutenshoppingcart, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null", "get_itemName");
+	}
+
+	-(void) setItemName:(id)p0
+	{
+		static MonoMethod *managed_method = NULL;
+		native_to_managed_trampoline_2 (self, _cmd, &managed_method, p0, "UIKit.UILabel, Xamarin.iOS, Version=0.0.0.0, Culture=neutral, PublicKeyToken=84e04ff9cfb79065", "rakutenshoppingcart.ShopItemCell, rakutenshoppingcart, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null", "set_itemName");
+	}
+
+	-(id) itemTagline
+	{
+		static MonoMethod *managed_method = NULL;
+		return native_to_managed_trampoline_1 (self, _cmd, &managed_method, "rakutenshoppingcart.ShopItemCell, rakutenshoppingcart, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null", "get_itemTagline");
+	}
+
+	-(void) setItemTagline:(id)p0
+	{
+		static MonoMethod *managed_method = NULL;
+		native_to_managed_trampoline_2 (self, _cmd, &managed_method, p0, "UIKit.UILabel, Xamarin.iOS, Version=0.0.0.0, Culture=neutral, PublicKeyToken=84e04ff9cfb79065", "rakutenshoppingcart.ShopItemCell, rakutenshoppingcart, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null", "set_itemTagline");
+	}
+
+	-(id) itemThumbnail
+	{
+		static MonoMethod *managed_method = NULL;
+		return native_to_managed_trampoline_1 (self, _cmd, &managed_method, "rakutenshoppingcart.ShopItemCell, rakutenshoppingcart, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null", "get_itemThumbnail");
+	}
+
+	-(void) setItemThumbnail:(id)p0
+	{
+		static MonoMethod *managed_method = NULL;
+		native_to_managed_trampoline_2 (self, _cmd, &managed_method, p0, "UIKit.UIImageView, Xamarin.iOS, Version=0.0.0.0, Culture=neutral, PublicKeyToken=84e04ff9cfb79065", "rakutenshoppingcart.ShopItemCell, rakutenshoppingcart, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null", "set_itemThumbnail");
+	}
+
+	-(bool) conformsToProtocol:(void *)p0
+	{
+		static MonoMethod *managed_method = NULL;
+		return native_to_managed_trampoline_3 (self, _cmd, &managed_method, p0, "System.IntPtr, mscorlib, Version=2.0.5.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e", "Foundation.NSObject, Xamarin.iOS, Version=0.0.0.0, Culture=neutral, PublicKeyToken=84e04ff9cfb79065", "InvokeConformsToProtocol");
+	}
+@end
+
+@interface ShopItemCell2 : UITableViewCell {
+	void *__monoObjectGCHandle;
+}
+	@property (nonatomic, assign) id itemBrand;
+	@property (nonatomic, assign) id itemImage;
+	@property (nonatomic, assign) id itemName;
+	@property (nonatomic, assign) id itemTagline;
+	-(void) release;
+	-(id) retain;
+	-(void) dealloc;
+	-(id) itemBrand;
+	-(void) setItemBrand:(id)p0;
+	-(id) itemImage;
+	-(void) setItemImage:(id)p0;
+	-(id) itemName;
+	-(void) setItemName:(id)p0;
+	-(id) itemTagline;
+	-(void) setItemTagline:(id)p0;
+	-(bool) conformsToProtocol:(void *)p0;
+@end
+@implementation ShopItemCell2 { } 
+	-(void) release
+	{
+		xamarin_release_trampoline (self, _cmd);
+	}
+
+	-(id) retain
+	{
+		return xamarin_retain_trampoline (self, _cmd);
+	}
+
+	-(void) dealloc
+	{
+		int gchandle = xamarin_get_gchandle (self);
+		xamarin_unregister_nsobject (self, mono_gchandle_get_target (gchandle));
+		xamarin_free_gchandle (self, gchandle);
+		mono_thread_detach_if_exiting ();
+		[super dealloc];
+	}
+
+	-(id) itemBrand
+	{
+		static MonoMethod *managed_method = NULL;
+		return native_to_managed_trampoline_1 (self, _cmd, &managed_method, "rakutenshoppingcart.ShopItemCell2, rakutenshoppingcart, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null", "get_itemBrand");
+	}
+
+	-(void) setItemBrand:(id)p0
+	{
+		static MonoMethod *managed_method = NULL;
+		native_to_managed_trampoline_2 (self, _cmd, &managed_method, p0, "UIKit.UILabel, Xamarin.iOS, Version=0.0.0.0, Culture=neutral, PublicKeyToken=84e04ff9cfb79065", "rakutenshoppingcart.ShopItemCell2, rakutenshoppingcart, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null", "set_itemBrand");
+	}
+
+	-(id) itemImage
+	{
+		static MonoMethod *managed_method = NULL;
+		return native_to_managed_trampoline_1 (self, _cmd, &managed_method, "rakutenshoppingcart.ShopItemCell2, rakutenshoppingcart, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null", "get_itemImage");
+	}
+
+	-(void) setItemImage:(id)p0
+	{
+		static MonoMethod *managed_method = NULL;
+		native_to_managed_trampoline_2 (self, _cmd, &managed_method, p0, "UIKit.UIImageView, Xamarin.iOS, Version=0.0.0.0, Culture=neutral, PublicKeyToken=84e04ff9cfb79065", "rakutenshoppingcart.ShopItemCell2, rakutenshoppingcart, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null", "set_itemImage");
+	}
+
+	-(id) itemName
+	{
+		static MonoMethod *managed_method = NULL;
+		return native_to_managed_trampoline_1 (self, _cmd, &managed_method, "rakutenshoppingcart.ShopItemCell2, rakutenshoppingcart, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null", "get_itemName");
+	}
+
+	-(void) setItemName:(id)p0
+	{
+		static MonoMethod *managed_method = NULL;
+		native_to_managed_trampoline_2 (self, _cmd, &managed_method, p0, "UIKit.UILabel, Xamarin.iOS, Version=0.0.0.0, Culture=neutral, PublicKeyToken=84e04ff9cfb79065", "rakutenshoppingcart.ShopItemCell2, rakutenshoppingcart, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null", "set_itemName");
+	}
+
+	-(id) itemTagline
+	{
+		static MonoMethod *managed_method = NULL;
+		return native_to_managed_trampoline_1 (self, _cmd, &managed_method, "rakutenshoppingcart.ShopItemCell2, rakutenshoppingcart, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null", "get_itemTagline");
+	}
+
+	-(void) setItemTagline:(id)p0
+	{
+		static MonoMethod *managed_method = NULL;
+		native_to_managed_trampoline_2 (self, _cmd, &managed_method, p0, "UIKit.UILabel, Xamarin.iOS, Version=0.0.0.0, Culture=neutral, PublicKeyToken=84e04ff9cfb79065", "rakutenshoppingcart.ShopItemCell2, rakutenshoppingcart, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null", "set_itemTagline");
+	}
+
+	-(bool) conformsToProtocol:(void *)p0
+	{
+		static MonoMethod *managed_method = NULL;
+		return native_to_managed_trampoline_3 (self, _cmd, &managed_method, p0, "System.IntPtr, mscorlib, Version=2.0.5.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e", "Foundation.NSObject, Xamarin.iOS, Version=0.0.0.0, Culture=neutral, PublicKeyToken=84e04ff9cfb79065", "InvokeConformsToProtocol");
+	}
+@end
+
 @interface UITableViewSource : NSObject/*<UIScrollViewDelegate>*/ {
 	void *__monoObjectGCHandle;
 }
@@ -750,7 +915,12 @@ void native_to_managed_trampoline_13 (id self, SEL _cmd, MonoMethod **managed_me
 }
 	@property (nonatomic, assign) id btnAddToCart;
 	@property (nonatomic, assign) id detailDescriptionLabel;
+	@property (nonatomic, assign) id lblPrice;
+	@property (nonatomic, assign) id lblTagline;
+	@property (nonatomic, assign) id lblTotal;
+	@property (nonatomic, assign) id qtyStepper;
 	@property (nonatomic, assign) id toolbar;
+	@property (nonatomic, assign) id txtQuantity;
 	@property (nonatomic, assign) id wvDescription;
 	-(void) release;
 	-(id) retain;
@@ -759,8 +929,18 @@ void native_to_managed_trampoline_13 (id self, SEL _cmd, MonoMethod **managed_me
 	-(void) setBtnAddToCart:(id)p0;
 	-(id) detailDescriptionLabel;
 	-(void) setDetailDescriptionLabel:(id)p0;
+	-(id) lblPrice;
+	-(void) setLblPrice:(id)p0;
+	-(id) lblTagline;
+	-(void) setLblTagline:(id)p0;
+	-(id) lblTotal;
+	-(void) setLblTotal:(id)p0;
+	-(id) qtyStepper;
+	-(void) setQtyStepper:(id)p0;
 	-(id) toolbar;
 	-(void) setToolbar:(id)p0;
+	-(id) txtQuantity;
+	-(void) setTxtQuantity:(id)p0;
 	-(id) wvDescription;
 	-(void) setWvDescription:(id)p0;
 	-(void) didReceiveMemoryWarning;
@@ -811,6 +991,54 @@ void native_to_managed_trampoline_13 (id self, SEL _cmd, MonoMethod **managed_me
 		native_to_managed_trampoline_2 (self, _cmd, &managed_method, p0, "UIKit.UILabel, Xamarin.iOS, Version=0.0.0.0, Culture=neutral, PublicKeyToken=84e04ff9cfb79065", "rakutenshoppingcart.DetailViewController, rakutenshoppingcart, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null", "set_detailDescriptionLabel");
 	}
 
+	-(id) lblPrice
+	{
+		static MonoMethod *managed_method = NULL;
+		return native_to_managed_trampoline_1 (self, _cmd, &managed_method, "rakutenshoppingcart.DetailViewController, rakutenshoppingcart, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null", "get_lblPrice");
+	}
+
+	-(void) setLblPrice:(id)p0
+	{
+		static MonoMethod *managed_method = NULL;
+		native_to_managed_trampoline_2 (self, _cmd, &managed_method, p0, "UIKit.UILabel, Xamarin.iOS, Version=0.0.0.0, Culture=neutral, PublicKeyToken=84e04ff9cfb79065", "rakutenshoppingcart.DetailViewController, rakutenshoppingcart, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null", "set_lblPrice");
+	}
+
+	-(id) lblTagline
+	{
+		static MonoMethod *managed_method = NULL;
+		return native_to_managed_trampoline_1 (self, _cmd, &managed_method, "rakutenshoppingcart.DetailViewController, rakutenshoppingcart, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null", "get_lblTagline");
+	}
+
+	-(void) setLblTagline:(id)p0
+	{
+		static MonoMethod *managed_method = NULL;
+		native_to_managed_trampoline_2 (self, _cmd, &managed_method, p0, "UIKit.UILabel, Xamarin.iOS, Version=0.0.0.0, Culture=neutral, PublicKeyToken=84e04ff9cfb79065", "rakutenshoppingcart.DetailViewController, rakutenshoppingcart, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null", "set_lblTagline");
+	}
+
+	-(id) lblTotal
+	{
+		static MonoMethod *managed_method = NULL;
+		return native_to_managed_trampoline_1 (self, _cmd, &managed_method, "rakutenshoppingcart.DetailViewController, rakutenshoppingcart, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null", "get_lblTotal");
+	}
+
+	-(void) setLblTotal:(id)p0
+	{
+		static MonoMethod *managed_method = NULL;
+		native_to_managed_trampoline_2 (self, _cmd, &managed_method, p0, "UIKit.UILabel, Xamarin.iOS, Version=0.0.0.0, Culture=neutral, PublicKeyToken=84e04ff9cfb79065", "rakutenshoppingcart.DetailViewController, rakutenshoppingcart, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null", "set_lblTotal");
+	}
+
+	-(id) qtyStepper
+	{
+		static MonoMethod *managed_method = NULL;
+		return native_to_managed_trampoline_1 (self, _cmd, &managed_method, "rakutenshoppingcart.DetailViewController, rakutenshoppingcart, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null", "get_qtyStepper");
+	}
+
+	-(void) setQtyStepper:(id)p0
+	{
+		static MonoMethod *managed_method = NULL;
+		native_to_managed_trampoline_2 (self, _cmd, &managed_method, p0, "UIKit.UIStepper, Xamarin.iOS, Version=0.0.0.0, Culture=neutral, PublicKeyToken=84e04ff9cfb79065", "rakutenshoppingcart.DetailViewController, rakutenshoppingcart, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null", "set_qtyStepper");
+	}
+
 	-(id) toolbar
 	{
 		static MonoMethod *managed_method = NULL;
@@ -821,6 +1049,18 @@ void native_to_managed_trampoline_13 (id self, SEL _cmd, MonoMethod **managed_me
 	{
 		static MonoMethod *managed_method = NULL;
 		native_to_managed_trampoline_2 (self, _cmd, &managed_method, p0, "UIKit.UIToolbar, Xamarin.iOS, Version=0.0.0.0, Culture=neutral, PublicKeyToken=84e04ff9cfb79065", "rakutenshoppingcart.DetailViewController, rakutenshoppingcart, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null", "set_toolbar");
+	}
+
+	-(id) txtQuantity
+	{
+		static MonoMethod *managed_method = NULL;
+		return native_to_managed_trampoline_1 (self, _cmd, &managed_method, "rakutenshoppingcart.DetailViewController, rakutenshoppingcart, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null", "get_txtQuantity");
+	}
+
+	-(void) setTxtQuantity:(id)p0
+	{
+		static MonoMethod *managed_method = NULL;
+		native_to_managed_trampoline_2 (self, _cmd, &managed_method, p0, "UIKit.UITextField, Xamarin.iOS, Version=0.0.0.0, Culture=neutral, PublicKeyToken=84e04ff9cfb79065", "rakutenshoppingcart.DetailViewController, rakutenshoppingcart, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null", "set_txtQuantity");
 	}
 
 	-(id) wvDescription
@@ -851,54 +1091,6 @@ void native_to_managed_trampoline_13 (id self, SEL _cmd, MonoMethod **managed_me
 	{
 		static MonoMethod *managed_method = NULL;
 		return native_to_managed_trampoline_3 (self, _cmd, &managed_method, p0, "System.IntPtr, mscorlib, Version=2.0.5.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e", "Foundation.NSObject, Xamarin.iOS, Version=0.0.0.0, Culture=neutral, PublicKeyToken=84e04ff9cfb79065", "InvokeConformsToProtocol");
-	}
-@end
-
-@interface rakutenshoppingcart_Cart2ViewController_DataSource : UITableViewSource {
-}
-	-(NSInteger) numberOfSectionsInTableView:(id)p0;
-	-(NSInteger) tableView:(id)p0 numberOfRowsInSection:(NSInteger)p1;
-	-(void) didChangeValueForKey:(NSString *)p0;
-	-(id) tableView:(id)p0 cellForRowAtIndexPath:(id)p1;
-	-(void) tableView:(id)p0 accessoryButtonTappedForRowWithIndexPath:(id)p1;
-	-(void) tableView:(id)p0 commitEditingStyle:(NSInteger)p1 forRowAtIndexPath:(id)p2;
-@end
-@implementation rakutenshoppingcart_Cart2ViewController_DataSource { } 
-
-	-(NSInteger) numberOfSectionsInTableView:(id)p0
-	{
-		static MonoMethod *managed_method = NULL;
-		return native_to_managed_trampoline_6 (self, _cmd, &managed_method, p0, "UIKit.UITableView, Xamarin.iOS, Version=0.0.0.0, Culture=neutral, PublicKeyToken=84e04ff9cfb79065", "rakutenshoppingcart.Cart2ViewController+DataSource, rakutenshoppingcart, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null", "NumberOfSections");
-	}
-
-	-(NSInteger) tableView:(id)p0 numberOfRowsInSection:(NSInteger)p1
-	{
-		static MonoMethod *managed_method = NULL;
-		return native_to_managed_trampoline_7 (self, _cmd, &managed_method, p0, p1, "UIKit.UITableView, Xamarin.iOS, Version=0.0.0.0, Culture=neutral, PublicKeyToken=84e04ff9cfb79065", "System.nint, Xamarin.iOS, Version=0.0.0.0, Culture=neutral, PublicKeyToken=84e04ff9cfb79065", "rakutenshoppingcart.Cart2ViewController+DataSource, rakutenshoppingcart, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null", "RowsInSection");
-	}
-
-	-(void) didChangeValueForKey:(NSString *)p0
-	{
-		static MonoMethod *managed_method = NULL;
-		native_to_managed_trampoline_12 (self, _cmd, &managed_method, p0, "System.String, mscorlib, Version=2.0.5.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e", "rakutenshoppingcart.Cart2ViewController+DataSource, rakutenshoppingcart, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null", "DidChangeValue");
-	}
-
-	-(id) tableView:(id)p0 cellForRowAtIndexPath:(id)p1
-	{
-		static MonoMethod *managed_method = NULL;
-		return native_to_managed_trampoline_8 (self, _cmd, &managed_method, p0, p1, "UIKit.UITableView, Xamarin.iOS, Version=0.0.0.0, Culture=neutral, PublicKeyToken=84e04ff9cfb79065", "Foundation.NSIndexPath, Xamarin.iOS, Version=0.0.0.0, Culture=neutral, PublicKeyToken=84e04ff9cfb79065", "rakutenshoppingcart.Cart2ViewController+DataSource, rakutenshoppingcart, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null", "GetCell");
-	}
-
-	-(void) tableView:(id)p0 accessoryButtonTappedForRowWithIndexPath:(id)p1
-	{
-		static MonoMethod *managed_method = NULL;
-		native_to_managed_trampoline_10 (self, _cmd, &managed_method, p0, p1, "UIKit.UITableView, Xamarin.iOS, Version=0.0.0.0, Culture=neutral, PublicKeyToken=84e04ff9cfb79065", "Foundation.NSIndexPath, Xamarin.iOS, Version=0.0.0.0, Culture=neutral, PublicKeyToken=84e04ff9cfb79065", "rakutenshoppingcart.Cart2ViewController+DataSource, rakutenshoppingcart, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null", "AccessoryButtonTapped");
-	}
-
-	-(void) tableView:(id)p0 commitEditingStyle:(NSInteger)p1 forRowAtIndexPath:(id)p2
-	{
-		static MonoMethod *managed_method = NULL;
-		native_to_managed_trampoline_11 (self, _cmd, &managed_method, p0, p1, p2, "UIKit.UITableView, Xamarin.iOS, Version=0.0.0.0, Culture=neutral, PublicKeyToken=84e04ff9cfb79065", "UIKit.UITableViewCellEditingStyle, Xamarin.iOS, Version=0.0.0.0, Culture=neutral, PublicKeyToken=84e04ff9cfb79065", "Foundation.NSIndexPath, Xamarin.iOS, Version=0.0.0.0, Culture=neutral, PublicKeyToken=84e04ff9cfb79065", "rakutenshoppingcart.Cart2ViewController+DataSource, rakutenshoppingcart, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null", "CommitEditingStyle");
 	}
 @end
 
@@ -1203,6 +1395,47 @@ void native_to_managed_trampoline_13 (id self, SEL _cmd, MonoMethod **managed_me
 	}
 @end
 
+@interface rakutenshoppingcart_Cart2ViewController_DataSource : UITableViewSource {
+}
+	-(NSInteger) numberOfSectionsInTableView:(id)p0;
+	-(NSInteger) tableView:(id)p0 numberOfRowsInSection:(NSInteger)p1;
+	-(id) tableView:(id)p0 cellForRowAtIndexPath:(id)p1;
+	-(void) tableView:(id)p0 accessoryButtonTappedForRowWithIndexPath:(id)p1;
+	-(void) tableView:(id)p0 commitEditingStyle:(NSInteger)p1 forRowAtIndexPath:(id)p2;
+@end
+@implementation rakutenshoppingcart_Cart2ViewController_DataSource { } 
+
+	-(NSInteger) numberOfSectionsInTableView:(id)p0
+	{
+		static MonoMethod *managed_method = NULL;
+		return native_to_managed_trampoline_6 (self, _cmd, &managed_method, p0, "UIKit.UITableView, Xamarin.iOS, Version=0.0.0.0, Culture=neutral, PublicKeyToken=84e04ff9cfb79065", "rakutenshoppingcart.Cart2ViewController+DataSource, rakutenshoppingcart, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null", "NumberOfSections");
+	}
+
+	-(NSInteger) tableView:(id)p0 numberOfRowsInSection:(NSInteger)p1
+	{
+		static MonoMethod *managed_method = NULL;
+		return native_to_managed_trampoline_7 (self, _cmd, &managed_method, p0, p1, "UIKit.UITableView, Xamarin.iOS, Version=0.0.0.0, Culture=neutral, PublicKeyToken=84e04ff9cfb79065", "System.nint, Xamarin.iOS, Version=0.0.0.0, Culture=neutral, PublicKeyToken=84e04ff9cfb79065", "rakutenshoppingcart.Cart2ViewController+DataSource, rakutenshoppingcart, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null", "RowsInSection");
+	}
+
+	-(id) tableView:(id)p0 cellForRowAtIndexPath:(id)p1
+	{
+		static MonoMethod *managed_method = NULL;
+		return native_to_managed_trampoline_8 (self, _cmd, &managed_method, p0, p1, "UIKit.UITableView, Xamarin.iOS, Version=0.0.0.0, Culture=neutral, PublicKeyToken=84e04ff9cfb79065", "Foundation.NSIndexPath, Xamarin.iOS, Version=0.0.0.0, Culture=neutral, PublicKeyToken=84e04ff9cfb79065", "rakutenshoppingcart.Cart2ViewController+DataSource, rakutenshoppingcart, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null", "GetCell");
+	}
+
+	-(void) tableView:(id)p0 accessoryButtonTappedForRowWithIndexPath:(id)p1
+	{
+		static MonoMethod *managed_method = NULL;
+		native_to_managed_trampoline_10 (self, _cmd, &managed_method, p0, p1, "UIKit.UITableView, Xamarin.iOS, Version=0.0.0.0, Culture=neutral, PublicKeyToken=84e04ff9cfb79065", "Foundation.NSIndexPath, Xamarin.iOS, Version=0.0.0.0, Culture=neutral, PublicKeyToken=84e04ff9cfb79065", "rakutenshoppingcart.Cart2ViewController+DataSource, rakutenshoppingcart, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null", "AccessoryButtonTapped");
+	}
+
+	-(void) tableView:(id)p0 commitEditingStyle:(NSInteger)p1 forRowAtIndexPath:(id)p2
+	{
+		static MonoMethod *managed_method = NULL;
+		native_to_managed_trampoline_11 (self, _cmd, &managed_method, p0, p1, p2, "UIKit.UITableView, Xamarin.iOS, Version=0.0.0.0, Culture=neutral, PublicKeyToken=84e04ff9cfb79065", "UIKit.UITableViewCellEditingStyle, Xamarin.iOS, Version=0.0.0.0, Culture=neutral, PublicKeyToken=84e04ff9cfb79065", "Foundation.NSIndexPath, Xamarin.iOS, Version=0.0.0.0, Culture=neutral, PublicKeyToken=84e04ff9cfb79065", "rakutenshoppingcart.Cart2ViewController+DataSource, rakutenshoppingcart, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null", "CommitEditingStyle");
+	}
+@end
+
 @interface __MonoMac_NSAsyncActionDispatcher : NSObject {
 	void *__monoObjectGCHandle;
 }
@@ -1320,7 +1553,7 @@ void native_to_managed_trampoline_13 (id self, SEL _cmd, MonoMethod **managed_me
 	+(void) drain:(id)p0
 	{
 		static MonoMethod *managed_method = NULL;
-		native_to_managed_trampoline_13 (self, _cmd, &managed_method, p0, "Foundation.NSObject, Xamarin.iOS, Version=0.0.0.0, Culture=neutral, PublicKeyToken=84e04ff9cfb79065", "Foundation.NSObject+NSObject_Disposer, Xamarin.iOS, Version=0.0.0.0, Culture=neutral, PublicKeyToken=84e04ff9cfb79065", "Drain");
+		native_to_managed_trampoline_12 (self, _cmd, &managed_method, p0, "Foundation.NSObject, Xamarin.iOS, Version=0.0.0.0, Culture=neutral, PublicKeyToken=84e04ff9cfb79065", "Foundation.NSObject+NSObject_Disposer, Xamarin.iOS, Version=0.0.0.0, Culture=neutral, PublicKeyToken=84e04ff9cfb79065", "Drain");
 	}
 
 	-(bool) conformsToProtocol:(void *)p0
@@ -1391,16 +1624,18 @@ void native_to_managed_trampoline_13 (id self, SEL _cmd, MonoMethod **managed_me
 		{"UIResponder", "UIKit.UIResponder, Xamarin.iOS, Version=0.0.0.0, Culture=neutral, PublicKeyToken=84e04ff9cfb79065", NULL },
 		{"UIViewController", "UIKit.UIViewController, Xamarin.iOS, Version=0.0.0.0, Culture=neutral, PublicKeyToken=84e04ff9cfb79065", NULL },
 		{"CartViewController", "rakutenshoppingcart.CartViewController, rakutenshoppingcart, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null", NULL },
+		{"UIView", "UIKit.UIView, Xamarin.iOS, Version=0.0.0.0, Culture=neutral, PublicKeyToken=84e04ff9cfb79065", NULL },
+		{"UITableViewCell", "UIKit.UITableViewCell, Xamarin.iOS, Version=0.0.0.0, Culture=neutral, PublicKeyToken=84e04ff9cfb79065", NULL },
+		{"ShopItemCell", "rakutenshoppingcart.ShopItemCell, rakutenshoppingcart, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null", NULL },
+		{"ShopItemCell2", "rakutenshoppingcart.ShopItemCell2, rakutenshoppingcart, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null", NULL },
 		{"UITableViewSource", "UIKit.UITableViewSource, Xamarin.iOS, Version=0.0.0.0, Culture=neutral, PublicKeyToken=84e04ff9cfb79065", NULL },
 		{"rakutenshoppingcart_MasterViewController_DataSource", "rakutenshoppingcart.MasterViewController+DataSource, rakutenshoppingcart, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null", NULL },
 		{"UITableViewController", "UIKit.UITableViewController, Xamarin.iOS, Version=0.0.0.0, Culture=neutral, PublicKeyToken=84e04ff9cfb79065", NULL },
 		{"MasterViewController", "rakutenshoppingcart.MasterViewController, rakutenshoppingcart, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null", NULL },
 		{"DetailViewController", "rakutenshoppingcart.DetailViewController, rakutenshoppingcart, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null", NULL },
-		{"rakutenshoppingcart_Cart2ViewController_DataSource", "rakutenshoppingcart.Cart2ViewController+DataSource, rakutenshoppingcart, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null", NULL },
 		{"Cart2ViewController", "rakutenshoppingcart.Cart2ViewController, rakutenshoppingcart, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null", NULL },
-		{"UIView", "UIKit.UIView, Xamarin.iOS, Version=0.0.0.0, Culture=neutral, PublicKeyToken=84e04ff9cfb79065", NULL },
-		{"UITableViewCell", "UIKit.UITableViewCell, Xamarin.iOS, Version=0.0.0.0, Culture=neutral, PublicKeyToken=84e04ff9cfb79065", NULL },
 		{"CartItemCell", "rakutenshoppingcart.CartItemCell, rakutenshoppingcart, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null", NULL },
+		{"rakutenshoppingcart_Cart2ViewController_DataSource", "rakutenshoppingcart.Cart2ViewController+DataSource, rakutenshoppingcart, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null", NULL },
 		{"NSArray", "Foundation.NSArray, Xamarin.iOS, Version=0.0.0.0, Culture=neutral, PublicKeyToken=84e04ff9cfb79065", NULL },
 		{"NSBundle", "Foundation.NSBundle, Xamarin.iOS, Version=0.0.0.0, Culture=neutral, PublicKeyToken=84e04ff9cfb79065", NULL },
 		{"NSCoder", "Foundation.NSCoder, Xamarin.iOS, Version=0.0.0.0, Culture=neutral, PublicKeyToken=84e04ff9cfb79065", NULL },
@@ -1410,6 +1645,7 @@ void native_to_managed_trampoline_13 (id self, SEL _cmd, MonoMethod **managed_me
 		{"NSURL", "Foundation.NSUrl, Xamarin.iOS, Version=0.0.0.0, Culture=neutral, PublicKeyToken=84e04ff9cfb79065", NULL },
 		{"__MonoMac_NSAsyncActionDispatcher", "Foundation.NSAsyncActionDispatcher, Xamarin.iOS, Version=0.0.0.0, Culture=neutral, PublicKeyToken=84e04ff9cfb79065", NULL },
 		{"NSAutoreleasePool", "Foundation.NSAutoreleasePool, Xamarin.iOS, Version=0.0.0.0, Culture=neutral, PublicKeyToken=84e04ff9cfb79065", NULL },
+		{"UIAlertView", "UIKit.UIAlertView, Xamarin.iOS, Version=0.0.0.0, Culture=neutral, PublicKeyToken=84e04ff9cfb79065", NULL },
 		{"UIApplication", "UIKit.UIApplication, Xamarin.iOS, Version=0.0.0.0, Culture=neutral, PublicKeyToken=84e04ff9cfb79065", NULL },
 		{"UIBarItem", "UIKit.UIBarItem, Xamarin.iOS, Version=0.0.0.0, Culture=neutral, PublicKeyToken=84e04ff9cfb79065", NULL },
 		{"UIControl", "UIKit.UIControl, Xamarin.iOS, Version=0.0.0.0, Culture=neutral, PublicKeyToken=84e04ff9cfb79065", NULL },
@@ -1454,59 +1690,62 @@ void xamarin_create_classes () {
 	__xamarin_class_map [2].handle = objc_getClass ("UIResponder");
 	__xamarin_class_map [3].handle = objc_getClass ("UIViewController");
 	__xamarin_class_map [4].handle = [CartViewController class];
-	__xamarin_class_map [5].handle = objc_getClass ("UITableViewSource");
-	__xamarin_class_map [6].handle = [rakutenshoppingcart_MasterViewController_DataSource class];
-	__xamarin_class_map [7].handle = objc_getClass ("UITableViewController");
-	__xamarin_class_map [8].handle = [MasterViewController class];
-	__xamarin_class_map [9].handle = [DetailViewController class];
-	__xamarin_class_map [10].handle = [rakutenshoppingcart_Cart2ViewController_DataSource class];
-	__xamarin_class_map [11].handle = [Cart2ViewController class];
-	__xamarin_class_map [12].handle = objc_getClass ("UIView");
-	__xamarin_class_map [13].handle = objc_getClass ("UITableViewCell");
-	__xamarin_class_map [14].handle = [CartItemCell class];
-	__xamarin_class_map [15].handle = objc_getClass ("NSArray");
-	__xamarin_class_map [16].handle = objc_getClass ("NSBundle");
-	__xamarin_class_map [17].handle = objc_getClass ("NSCoder");
-	__xamarin_class_map [18].handle = objc_getClass ("NSIndexPath");
-	__xamarin_class_map [19].handle = objc_getClass ("NSRunLoop");
-	__xamarin_class_map [20].handle = objc_getClass ("NSString");
-	__xamarin_class_map [21].handle = objc_getClass ("NSURL");
-	__xamarin_class_map [22].handle = objc_getClass ("__MonoMac_NSAsyncActionDispatcher");
-	__xamarin_class_map [23].handle = objc_getClass ("NSAutoreleasePool");
-	__xamarin_class_map [24].handle = objc_getClass ("UIApplication");
-	__xamarin_class_map [25].handle = objc_getClass ("UIBarItem");
-	__xamarin_class_map [26].handle = objc_getClass ("UIControl");
-	__xamarin_class_map [27].handle = objc_getClass ("UIButton");
-	__xamarin_class_map [28].handle = objc_getClass ("UIKit_UIControlEventProxy");
-	__xamarin_class_map [29].handle = objc_getClass ("UIDevice");
-	__xamarin_class_map [30].handle = objc_getClass ("UIImage");
-	__xamarin_class_map [31].handle = objc_getClass ("UINavigationBar");
-	__xamarin_class_map [32].handle = objc_getClass ("UINavigationController");
-	__xamarin_class_map [33].handle = objc_getClass ("UINib");
-	__xamarin_class_map [34].handle = objc_getClass ("UIScrollView");
-	__xamarin_class_map [35].handle = objc_getClass ("UITableView");
-	__xamarin_class_map [36].handle = objc_getClass ("UITextField");
-	__xamarin_class_map [37].handle = objc_getClass ("UIToolbar");
-	__xamarin_class_map [38].handle = objc_getClass ("UIWindow");
-	__xamarin_class_map [39].handle = objc_getClass ("NSException");
-	__xamarin_class_map [40].handle = objc_getClass ("NSNull");
-	__xamarin_class_map [41].handle = objc_getClass ("NSUserActivity");
-	__xamarin_class_map [42].handle = objc_getClass ("UITextPosition");
-	__xamarin_class_map [43].handle = objc_getClass ("UITextRange");
-	__xamarin_class_map [44].handle = objc_getClass ("UITextSelectionRect");
-	__xamarin_class_map [45].handle = objc_getClass ("UILocalNotification");
-	__xamarin_class_map [46].handle = objc_getClass ("UILabel");
-	__xamarin_class_map [47].handle = objc_getClass ("UIImageView");
-	__xamarin_class_map [48].handle = objc_getClass ("UINavigationItem");
-	__xamarin_class_map [49].handle = objc_getClass ("UITraitCollection");
-	__xamarin_class_map [50].handle = objc_getClass ("UIWebView");
-	__xamarin_class_map [51].handle = objc_getClass ("UIStepper");
-	__xamarin_class_map [52].handle = objc_getClass ("UIStoryboardSegue");
-	__xamarin_class_map [53].handle = objc_getClass ("NSData");
-	__xamarin_class_map [54].handle = objc_getClass ("NSDictionary");
-	__xamarin_class_map [55].handle = objc_getClass ("__NSObject_Disposer");
-	__xamarin_class_map [56].handle = objc_getClass ("UIKit_UIBarButtonItem_Callback");
-	__xamarin_class_map [57].handle = objc_getClass ("UIBarButtonItem");
-	xamarin_setup_classmap (__xamarin_class_map, 58);
+	__xamarin_class_map [5].handle = objc_getClass ("UIView");
+	__xamarin_class_map [6].handle = objc_getClass ("UITableViewCell");
+	__xamarin_class_map [7].handle = [ShopItemCell class];
+	__xamarin_class_map [8].handle = [ShopItemCell2 class];
+	__xamarin_class_map [9].handle = objc_getClass ("UITableViewSource");
+	__xamarin_class_map [10].handle = [rakutenshoppingcart_MasterViewController_DataSource class];
+	__xamarin_class_map [11].handle = objc_getClass ("UITableViewController");
+	__xamarin_class_map [12].handle = [MasterViewController class];
+	__xamarin_class_map [13].handle = [DetailViewController class];
+	__xamarin_class_map [14].handle = [Cart2ViewController class];
+	__xamarin_class_map [15].handle = [CartItemCell class];
+	__xamarin_class_map [16].handle = [rakutenshoppingcart_Cart2ViewController_DataSource class];
+	__xamarin_class_map [17].handle = objc_getClass ("NSArray");
+	__xamarin_class_map [18].handle = objc_getClass ("NSBundle");
+	__xamarin_class_map [19].handle = objc_getClass ("NSCoder");
+	__xamarin_class_map [20].handle = objc_getClass ("NSIndexPath");
+	__xamarin_class_map [21].handle = objc_getClass ("NSRunLoop");
+	__xamarin_class_map [22].handle = objc_getClass ("NSString");
+	__xamarin_class_map [23].handle = objc_getClass ("NSURL");
+	__xamarin_class_map [24].handle = objc_getClass ("__MonoMac_NSAsyncActionDispatcher");
+	__xamarin_class_map [25].handle = objc_getClass ("NSAutoreleasePool");
+	__xamarin_class_map [26].handle = objc_getClass ("UIAlertView");
+	__xamarin_class_map [27].handle = objc_getClass ("UIApplication");
+	__xamarin_class_map [28].handle = objc_getClass ("UIBarItem");
+	__xamarin_class_map [29].handle = objc_getClass ("UIControl");
+	__xamarin_class_map [30].handle = objc_getClass ("UIButton");
+	__xamarin_class_map [31].handle = objc_getClass ("UIKit_UIControlEventProxy");
+	__xamarin_class_map [32].handle = objc_getClass ("UIDevice");
+	__xamarin_class_map [33].handle = objc_getClass ("UIImage");
+	__xamarin_class_map [34].handle = objc_getClass ("UINavigationBar");
+	__xamarin_class_map [35].handle = objc_getClass ("UINavigationController");
+	__xamarin_class_map [36].handle = objc_getClass ("UINib");
+	__xamarin_class_map [37].handle = objc_getClass ("UIScrollView");
+	__xamarin_class_map [38].handle = objc_getClass ("UITableView");
+	__xamarin_class_map [39].handle = objc_getClass ("UITextField");
+	__xamarin_class_map [40].handle = objc_getClass ("UIToolbar");
+	__xamarin_class_map [41].handle = objc_getClass ("UIWindow");
+	__xamarin_class_map [42].handle = objc_getClass ("NSException");
+	__xamarin_class_map [43].handle = objc_getClass ("NSNull");
+	__xamarin_class_map [44].handle = objc_getClass ("NSUserActivity");
+	__xamarin_class_map [45].handle = objc_getClass ("UITextPosition");
+	__xamarin_class_map [46].handle = objc_getClass ("UITextRange");
+	__xamarin_class_map [47].handle = objc_getClass ("UITextSelectionRect");
+	__xamarin_class_map [48].handle = objc_getClass ("UILocalNotification");
+	__xamarin_class_map [49].handle = objc_getClass ("UILabel");
+	__xamarin_class_map [50].handle = objc_getClass ("UIImageView");
+	__xamarin_class_map [51].handle = objc_getClass ("UINavigationItem");
+	__xamarin_class_map [52].handle = objc_getClass ("UITraitCollection");
+	__xamarin_class_map [53].handle = objc_getClass ("UIWebView");
+	__xamarin_class_map [54].handle = objc_getClass ("UIStepper");
+	__xamarin_class_map [55].handle = objc_getClass ("UIStoryboardSegue");
+	__xamarin_class_map [56].handle = objc_getClass ("NSData");
+	__xamarin_class_map [57].handle = objc_getClass ("NSDictionary");
+	__xamarin_class_map [58].handle = objc_getClass ("__NSObject_Disposer");
+	__xamarin_class_map [59].handle = objc_getClass ("UIKit_UIBarButtonItem_Callback");
+	__xamarin_class_map [60].handle = objc_getClass ("UIBarButtonItem");
+	xamarin_setup_classmap (__xamarin_class_map, 61);
 }
 

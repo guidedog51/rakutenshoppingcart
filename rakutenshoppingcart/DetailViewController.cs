@@ -104,6 +104,8 @@ namespace rakutenshoppingcart
 				newItem.thumbnailurl = si.images[0].location;
 
 				CurrentShoppingCart.Instance.CartItems.Add(newItem);
+				UIAlertView confirm = new UIAlertView("Item added!", string.Format("{0} has been added to your cart.", si.name), null, "OK", null);
+				confirm.Show();
 
 			};
 
