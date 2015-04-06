@@ -3,6 +3,8 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2012
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "rakutenshoppingcart", "rakutenshoppingcart\rakutenshoppingcart.csproj", "{3EA6A4E5-6189-4041-A848-FCB46679BC3A}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "shoppingcarttests", "shoppingcarttests\shoppingcarttests.csproj", "{185A5388-606B-4B14-A182-556D78A0106B}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|iPhoneSimulator = Debug|iPhoneSimulator
@@ -13,6 +15,18 @@ Global
 		AppStore|iPhone = AppStore|iPhone
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{185A5388-606B-4B14-A182-556D78A0106B}.Ad-Hoc|iPhone.ActiveCfg = Ad-Hoc|iPhone
+		{185A5388-606B-4B14-A182-556D78A0106B}.Ad-Hoc|iPhone.Build.0 = Ad-Hoc|iPhone
+		{185A5388-606B-4B14-A182-556D78A0106B}.AppStore|iPhone.ActiveCfg = AppStore|iPhone
+		{185A5388-606B-4B14-A182-556D78A0106B}.AppStore|iPhone.Build.0 = AppStore|iPhone
+		{185A5388-606B-4B14-A182-556D78A0106B}.Debug|iPhone.ActiveCfg = Debug|iPhone
+		{185A5388-606B-4B14-A182-556D78A0106B}.Debug|iPhone.Build.0 = Debug|iPhone
+		{185A5388-606B-4B14-A182-556D78A0106B}.Debug|iPhoneSimulator.ActiveCfg = Debug|iPhoneSimulator
+		{185A5388-606B-4B14-A182-556D78A0106B}.Debug|iPhoneSimulator.Build.0 = Debug|iPhoneSimulator
+		{185A5388-606B-4B14-A182-556D78A0106B}.Release|iPhone.ActiveCfg = Release|iPhone
+		{185A5388-606B-4B14-A182-556D78A0106B}.Release|iPhone.Build.0 = Release|iPhone
+		{185A5388-606B-4B14-A182-556D78A0106B}.Release|iPhoneSimulator.ActiveCfg = Release|iPhoneSimulator
+		{185A5388-606B-4B14-A182-556D78A0106B}.Release|iPhoneSimulator.Build.0 = Release|iPhoneSimulator
 		{3EA6A4E5-6189-4041-A848-FCB46679BC3A}.Ad-Hoc|iPhone.ActiveCfg = Ad-Hoc|iPhone
 		{3EA6A4E5-6189-4041-A848-FCB46679BC3A}.Ad-Hoc|iPhone.Build.0 = Ad-Hoc|iPhone
 		{3EA6A4E5-6189-4041-A848-FCB46679BC3A}.AppStore|iPhone.ActiveCfg = AppStore|iPhone
